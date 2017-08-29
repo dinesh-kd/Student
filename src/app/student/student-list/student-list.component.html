@@ -1,3 +1,45 @@
-<p>
-  student-list works!
-</p>
+<md-toolbar color="accent">
+    <span>List</span>
+    <span class="menu-spacer"></span>
+    <button md-icon-button [mdMenuTriggerFor]="menu">
+      <md-icon>more_vert</md-icon>
+    </button>
+    <md-menu #menu="mdMenu">
+      <button md-menu-item>
+        <md-icon>delete</md-icon>
+        <span>Delete all</span>
+      </button>
+    </md-menu>
+</md-toolbar>
+
+<div class="row">
+  <div class="col-md-12">
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Name</th>
+          <th>Father name</th>
+          <th>Roll Num</th>
+          <th>Class</th>
+          <th>Gender</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">1</th>
+          <td>Dinesh</td>
+          <td>Devaraj</td>
+          <td>1101</td>
+          <td>11</td>
+          <td>Male</td>
+          <td>
+            <button type="button" class="btn btn-warning">Edit</button>
+            <button type="button" class="btn btn-error">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
