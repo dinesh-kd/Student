@@ -9,6 +9,16 @@
 {
     padding: 12px;
     width: 100%;
-    text-align: center;
+    display: block;
+}
+
+.sl-menu md-list-item.active
+{
     border-left: 6px solid #65E798;
+    background-color: #ccc;
+}
+
+.sl-menu md-list
+{
+    width: 100%;
 }

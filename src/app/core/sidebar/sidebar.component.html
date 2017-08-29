@@ -1,7 +1,10 @@
 <div class="row sl-menu">
   <md-list>
-    <md-list-item>
+    <md-list-item [routerLink]="['/student/list']" routerLinkActive="active" class="cursor_pointer">
         Student list
     </md-list-item>
+    <md-list-item [routerLink]="['/student/add']" routerLinkActive="active" class="cursor_pointer">
+       Student Add
+  </md-list-item>
   </md-list>
 </div>
