@@ -25,10 +25,10 @@ export class StudentAddComponent implements OnInit {
 
   stuClass:string[] = new Array("1 st","2 nd","3 rd","4 th","5 th","6 th","7 th","8 th","9 th","10 th")
 
-  createStudentForm() {
+  createStudentForm():void {
     this.studentForm = this.fb.group({
       name: ['', Validators.required ],
-      fatherName: '',
+      fatherName: ['', Validators.required ],
       rollNum: '',
       address: '',
       class: '',
