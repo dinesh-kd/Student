@@ -12,3 +12,7 @@ body{
 {
     cursor: pointer;
 }
+
+.menu-spacer {
+    flex: 1 1 auto;
+  }

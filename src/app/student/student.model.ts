@@ -1,5 +1,4 @@
-export interface StudentModel {
-    id: number;
+export class StudentModel {
     name: string;
     fatherName: string;
     rollNum: string;
