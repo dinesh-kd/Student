@@ -2,6 +2,7 @@
 {
     padding: 10px 0px;
     background-color: #EBEBEB;
+    height:90vh;
 }
 
 .sl-menu md-list-item
@@ -9,4 +10,5 @@
     padding: 12px;
     width: 100%;
     text-align: center;
+    border-left: 6px solid #65E798;
 }
