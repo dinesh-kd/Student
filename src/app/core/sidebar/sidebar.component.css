@@ -1,0 +1,12 @@
+.sl-menu
+{
+    padding: 10px 0px;
+    background-color: #EBEBEB;
+}
+
+.sl-menu md-list-item
+{
+    padding: 12px;
+    width: 100%;
+    text-align: center;
+}
