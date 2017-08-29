@@ -6,7 +6,7 @@
       <md-icon>more_vert</md-icon>
     </button>
     <md-menu #menu="mdMenu">
-      <button md-menu-item>
+      <button md-menu-item  (click)="deleteAll()">
         <md-icon>delete</md-icon>
         <span>Delete all</span>
       </button>
@@ -39,8 +39,11 @@
           <td>{{student.gender}}</td>
           <td>
             <button type="button" class="btn btn-warning" [routerLink]="['/student/edit',i]">Edit</button>
-            <button type="button" class="btn btn-error">Delete</button>
+            <button type="button" class="btn btn-error" (click)="singleDelete(i)">Delete</button>
           </td>
+        </tr>
+        <tr *ngIf="studentList.length==0">
+          <td colspan="7">No sudent found</td>
         </tr>
       </tbody>
     </table>

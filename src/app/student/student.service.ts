@@ -11,8 +11,24 @@ export class StudentService {
         return Object.assign([], this.StudentData);
     }
 
-    AddStudent(data:StudentModel){
+    AddStudent(data:StudentModel):void{
         this.StudentData.push(data);
+    }
+
+    GetStudent(id:any):StudentModel{
+        return this.StudentData[id];
+    }
+
+    UpdateStudent(data:StudentModel,id:any):void{
+        this.StudentData[id] = data;
+    }
+
+    DeleteStudent(id:any):void{
+            this.StudentData.splice(id, 1);
+    }
+
+    DeleteAllStudent():void{
+        this.StudentData = [];
     }
 
 

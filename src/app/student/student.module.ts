@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { MdIconModule,MdToolbarModule,MdMenuModule,MdButtonModule } from '@angular/material';
+import { MdIconModule,MdToolbarModule,MdMenuModule,MdButtonModule,MdSnackBarModule,MdDialogModule } from '@angular/material';
 import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 
 import { SharedModule } from '../shared/shared.module';
@@ -17,6 +17,8 @@ import { StudentService } from './student.service';
     MdToolbarModule,
     MdMenuModule,
     MdButtonModule,
+    MdSnackBarModule,
+    MdDialogModule,
     FormsModule,
     ReactiveFormsModule,
     SharedModule

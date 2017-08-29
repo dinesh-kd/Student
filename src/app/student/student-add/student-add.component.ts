@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router, ActivatedRoute, ParamMap } from '@angular/router';
+import { MdSnackBar } from '@angular/material';
+import 'rxjs/add/operator/switchMap';
 
 import { StudentModel } from '../student.model';
 import { StudentService } from '../student.service';
@@ -12,8 +15,11 @@ import { StudentService } from '../student.service';
 export class StudentAddComponent implements OnInit {
   
   studentForm: FormGroup;
+  selectedStudent: StudentModel;
+  editMode:boolean = false;
+  editId:any;
 
-  constructor(private fb: FormBuilder,private StudentService:StudentService) { 
+  constructor(private fb: FormBuilder,private StudentService:StudentService,private router:Router,private toaster:MdSnackBar, private route: ActivatedRoute,) { 
     this.createStudentForm();
   }
 
@@ -31,12 +37,29 @@ export class StudentAddComponent implements OnInit {
   }
 
   onSubmit(data:StudentModel):void {
-    this.StudentService.AddStudent(data);
-    console.log(this.StudentService.StudentDetails);
-    debugger;
+    if(this.editMode)
+    {
+      this.StudentService.UpdateStudent(data,this.editId);
+      this.toaster.open('Updated successfully','',{
+        duration: 2000
+      });
+    }else{
+      this.StudentService.AddStudent(data);
+      this.toaster.open('Added successfully','',{
+        duration: 2000
+      });
+    }
+    this.router.navigate(['/student/list']);
   }
 
   ngOnInit() {
+    this.editId = this.route.snapshot.paramMap.get('id');
+    this.selectedStudent = this.StudentService.GetStudent( this.editId);
+    if(this.selectedStudent)
+    {
+      this.studentForm.patchValue(this.selectedStudent);
+      this.editMode = true;
+    }
   }
 
 }

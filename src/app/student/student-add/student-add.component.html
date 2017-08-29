@@ -1,5 +1,5 @@
 <md-toolbar color="accent">
-    <span>Add</span>
+    <span>{{editMode ? 'Update' : 'Add'}}</span>
     <span class="menu-spacer"></span>
     <button class="text-success" [routerLink]="['/student/list']" md-raised-button>Back</button>
 </md-toolbar>
@@ -45,7 +45,9 @@
                         </label>
                       </div>
                 </div>
-                <button type="submit" [disabled]="studentForm.invalid" class="btn btn-primary">Submit</button>
+                <button type="submit" [disabled]="studentForm.invalid" class="btn btn-primary">
+                    {{editMode ? 'Update' : 'Add'}}
+                </button>
               </form>
         </div>
       </div>
